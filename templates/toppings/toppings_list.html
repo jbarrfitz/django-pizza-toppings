@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="m-8">
+    <h1 class="flex items-center text-5xl font-extrabold">Available Toppings</h1>
+    <ul class="mb-8 mt-8 space-y-4 text-left text-gray-500 dark:text-gray-400">
+    {% for topping in toppings %}
+        <li class="flex items-center space-x-3">
+        <a href="{% url 'toppings_detail' topping.pk %}">{{ topping.name }}</a></span>
+        </li>
+    {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

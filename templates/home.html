@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Base Django Template{% endblock %}
-
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
+<div class="container mx-auto">
+  <h1 class="text-3xl font-bold mb-4">Pizza Topping Tracker</h1>
+
+  {% if user.is_authenticated %}
+    <p class="mb-2">Hi {{ user.username }}!</p>
+    <p><a href="{% url 'logout' %}" class="text-blue-500 underline">Log Out</a></p>
+  {% else %}
+    <p class="mb-2">You are not logged in</p>
+    <a href="{% url 'login' %}" class="mr-2 text-blue-500 underline">Log In</a> |
+    <a href="{% url 'signup' %}" class="text-blue-500 underline">Sign Up</a>
+  {% endif %}
+</div>
 {% endblock %}

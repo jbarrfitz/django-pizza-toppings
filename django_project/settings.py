@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "accounts",
-    "compressor"
+    "compressor",
+    "toppings"
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,7 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
-LOGIN_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "toppings_list"
 LOGOUT_REDIRECT_URL = "home"
 COMPRESS_ROOT = BASE_DIR / 'static'
 COMPRESS_ENABLED = True
